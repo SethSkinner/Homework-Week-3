@@ -38,7 +38,7 @@ function generatePassword() {
   } else if (numbOfChar <= 8 || numbOfChar >= 128) {
 
     //asking for user input and turning input into integer once more    
-    numbOfChar = parseInt (prompt ('you must insert a value between 8-128'));
+    numbOfChar = parseInt(prompt ('you must insert a value between 8-128'));
   
   //else statement that will use confirms to determine what characters the user chooses
   } else {
@@ -46,11 +46,13 @@ function generatePassword() {
       useSpecial = confirm('would you like your password to use special characters?');
       useLowercase = confirm('would you like your password to use lowercase letters?');
       useUppercase = confirm('would you like your password to use uppercase letters?');
-  }
+  };
 
   //if statement that makes user pick a choice in characters and doesnt not allow no choice of characters
   if (!useNumber && !useLowercase && !useSpecial && !useUppercase) {
       userChoice = alert('you have to choose atleast one type of character to use!');
   }
+
+  //
 
 }
