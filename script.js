@@ -1,29 +1,18 @@
-//adding user input
-let enter;
-let confirmNumber;
-let confirmSpecial;
-let confirmUpper;
-let confirmLower;
-let confirmLength;
+//user imput values
+var numOfChar;
+var useNumber;
+var useSpecial;
+var useLowercase;
+var useUppercase;
+//arrays for character input
+special =  ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",,, " < ", "=", " > ", " ? ", "@", "[", , "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 
-//functions to create password based on user input
-special = function getSpecial() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
+lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-lower = function getLower() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
+number = [1, 2, 3, 4, 5, 6, 7, 8, 9,];
 
-upper = function getUpper() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
-
-number = function getNumber() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
-
-// Assignment Code
+uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+// Assignment Code 
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
