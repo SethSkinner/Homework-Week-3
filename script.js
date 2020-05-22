@@ -4,8 +4,9 @@ var useNumber;
 var useSpecial;
 var useLowercase;
 var useUppercase;
+var userChoice;
 //arrays for character input
-special =  ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",,, " < ", "=", " > ", " ? ", "@", "[", , "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+special =  ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", " > ", " ? ", "@", "[", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 
 lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -27,18 +28,17 @@ generateBtn.addEventListener("click", writePassword);
 
 //function that takes the string and turns it into an integer for the number of characters
 function generatePassword() {
-  numbOfChar = parseInt(prompt('choose length of your password! 8-128'));
+  numOfChar = parseInt(prompt('choose length of your password! 8-128'));
   
   //an if statement that makes sure there has been a value input
-  if(!numOfChar) {
+  if (!numOfChar) {
     alert('you must insert a value between 8-128');
 
-
-  //else if statement that makes sure the value input was between 8-128
-  } else if (numbOfChar < 8 || enter > 128) {
+   //else if statement that makes sure the value input was between 8-128
+  } else if (numbOfChar <= 8 || numbOfChar >= 128) {
 
     //asking for user input and turning input into integer once more    
-      numbOfChar = parseInt(prompt('you must insert a value between 8-128'));
+    numbOfChar = parseInt (prompt ('you must insert a value between 8-128'));
   
   //else statement that will use confirms to determine what characters the user chooses
   } else {
@@ -47,4 +47,10 @@ function generatePassword() {
       useLowercase = confirm('would you like your password to use lowercase letters?');
       useUppercase = confirm('would you like your password to use uppercase letters?');
   }
+
+  //if statement that makes user pick a choice in characters and doesnt not allow no choice of characters
+  if (!useNumber && !useLowercase && !useSpecial && !useUppercase) {
+      userChoice = alert('you have to choose atleast one type of character to use!');
+  }
+
 }
