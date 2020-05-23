@@ -1,4 +1,5 @@
 //user imput values
+//user imput values
 var numOfChar;
 var useNumber;
 var useSpecial;
@@ -69,58 +70,53 @@ function generatePassword() {
 		userChoice = special.concat(lowercase, uppercase);
 	} else if (useNumber && useLowercase && useUppercase) {
 		userChoice = number.concat(lowercase, uppercase);
-    }
+	}
 
-    //else if statement that begins the parts of code that run if 2 types of characters are chosen
-    else if (useSpecial && useNumber) {
-        userChoice = special.concat(number);
+	//else if statement that begins the parts of code that run if 2 types of characters are chosen
+	else if (useSpecial && useNumber) {
+		userChoice = special.concat(number);
 
-    } else if (useSpecial && useLowercase) {
-        userChoice = special.concat(lowercase);
+	} else if (useSpecial && useLowercase) {
+		userChoice = special.concat(lowercase);
 
-    } else if (useSpecial && useUppercase) {
-        userChoice = special.concat(uppercase);
-    }
-    else if (useLowercase && useNumber) {
-        userChoice = lowercase.concat(number);
+	} else if (useSpecial && useUppercase) {
+		userChoice = special.concat(uppercase);
+	} else if (useLowercase && useNumber) {
+		userChoice = lowercase.concat(number);
 
-    } else if (useLowercase && useUppercase) {
-        userChoice = lowercase.concat(uppercase);
+	} else if (useLowercase && useUppercase) {
+		userChoice = lowercase.concat(uppercase);
 
-    } else if (useNumber && useUppercase) {
-        userChoice = number.concat(uppercase);
-    }
+	} else if (useNumber && useUppercase) {
+		userChoice = number.concat(uppercase);
+	}
 
-    //else if statement that begins the parts of code that run if 1 types of characters are chosen
-    else if (useSpecial) {
-        userChoice = special;
-    }
-    else if (useNumber) {
-        userChoice = number;
-    }
-    else if (useLowercase) {
-        userChoice = lowercase;
-    }
-    // Created space variable to fill uppercase conversion
-    else if (useUppercase) {
-        userChoice = empty.concat(uppercase);
-    }
+	//else if statement that begins the parts of code that run if 1 types of characters are chosen
+	else if (useSpecial) {
+		userChoice = special;
+	} else if (useNumber) {
+		userChoice = number;
+	} else if (useLowercase) {
+		userChoice = lowercase;
+	}else if (useUppercase) {
+		userChoice = uppercase;
+	}
 
-    // password variable is an array placeholder for user generated amount of length
-    var password = [];
+	// password variable is an array placeholder for user generated amount of length
+	var password = [];
 
-    // Start random selection variables:
-    // Random selection for all variables: 
-    for (var i = 0; i < userChoice; i++) {
-        var userChoices = userChoice[Math.floor(Math.random() * userChoice.length)];
-        password.push(userChoices);
-    }
-    var ps = password.join("");
-    UserInput(ps);
-    return ps;
+	// Start random selection variables:
+	// Random selection for all variables: 
+	for (var i = 0; i < numOfChar; i++) {
+		var userChoices = userChoice[Math.floor(Math.random() * userChoice.length)];
+		password.push(userChoices);
+	}
+	var ps = password.join("");
+	UserInput(ps);
+	return ps;
 }
 
 function UserInput(ps) {
-    document.querySelector("#password").textContent = ps;
+	document.getElementById("password").textContent = ps;
 
 }
