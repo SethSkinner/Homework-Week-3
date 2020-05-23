@@ -102,15 +102,15 @@ function generatePassword() {
 		userChoice = uppercase;
 	}
 
-	// password variable is an array placeholder for user generated amount of length
+	// adding an array for a variable password so that we can input all characters into this array and pick from all choices!
 	var password = [];
 
-	// Start random selection variables:
-	// Random selection for all variables: 
+	//for loop that goes through the array of all possible characters and chooses randomly out of the chosen input characters that a user chooses
 	for (var i = 0; i < numOfChar; i++) {
 		var userChoices = userChoice[Math.floor(Math.random() * userChoice.length)];
 		password.push(userChoices);
 	}
+	
 	var ps = password.join("");
 	UserInput(ps);
 	return ps;
