@@ -111,8 +111,8 @@ function generatePassword() {
     // Start random selection variables:
     // Random selection for all variables: 
     for (var i = 0; i < enter; i++) {
-        var pickChoices = choices[Math.floor(Math.random() * choices.length)];
-        password.push(pickChoices);
+        var userChoices = userChoice[Math.floor(Math.random() * userChoice.length)];
+        password.push(userChoices);
     }
     // This joins the password array and converts it to a string
     // Worked with a tutor to incorporate this option
