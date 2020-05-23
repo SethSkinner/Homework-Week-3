@@ -6,7 +6,6 @@ var useSpecial;
 var useLowercase;
 var useUppercase;
 var userChoice;
-var empty;
 
 //arrays for character input in password
 var special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", " > ", " ? ", "@", "[", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
