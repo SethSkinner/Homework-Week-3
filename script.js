@@ -6,6 +6,7 @@ var useSpecial;
 var useLowercase;
 var useUppercase;
 var userChoice;
+var empty;
 
 //arrays for character input in password
 var special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", " > ", " ? ", "@", "[", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
@@ -34,7 +35,7 @@ function generatePassword() {
 
 	//an if statement that makes sure there has been a value input
 	if (!numOfChar) {
-		alert('you must insert a value between 8-128');
+		alert('you must insert a value between 8-128')gi;
 
 		//else if statement that makes sure the value input was between 8-128
 	} else if (numOfChar < 8 || numOfChar > 128) {
@@ -97,7 +98,7 @@ function generatePassword() {
 		userChoice = number;
 	} else if (useLowercase) {
 		userChoice = lowercase;
-	}else if (useUppercase) {
+	} else if (useUppercase) {
 		userChoice = uppercase;
 	}
 
@@ -109,7 +110,7 @@ function generatePassword() {
 		var userChoices = userChoice[Math.floor(Math.random() * userChoice.length)];
 		password.push(userChoices);
 	}
-	
+
 	//creating variable to return the string value of the password generated randomly above
 	var randomPassword = password.join("");
 	UserInput(randomPassword);
