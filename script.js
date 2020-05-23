@@ -55,17 +55,19 @@ function generatePassword() {
 	}
 	// First if statement that uses user input prompts to determine choices
 	else if (useNumber && useSpecial && useLowercase && useUppercase) {
-
 		userChoice = special.concat(number, uppercase, lowercase);
 	}
 
 	//else if statement that begins the parts of code that run if 3 types of characters are chosen
 	else if (useSpecial && useNumber && useUppercase) {
 		userChoice = special.concat(number, uppercase);
+
 	} else if (useSpecial && useNumber && useLowercase) {
 		userChoice = special.concat(number, lowercase);
+
 	} else if (useSpecial && useLowercase && useUppercase) {
 		userChoice = special.concat(lowercase, uppercase);
+
 	} else if (useNumber && useLowercase && useUppercase) {
 		userChoice = number.concat(lowercase, uppercase);
 	}
@@ -79,6 +81,7 @@ function generatePassword() {
 
 	} else if (useSpecial && useUppercase) {
 		userChoice = special.concat(uppercase);
+
 	} else if (useLowercase && useNumber) {
 		userChoice = lowercase.concat(number);
 
@@ -92,10 +95,13 @@ function generatePassword() {
 	//else if statement that begins the parts of code that run if 1 types of characters are chosen
 	else if (useSpecial) {
 		userChoice = special;
+
 	} else if (useNumber) {
 		userChoice = number;
+
 	} else if (useLowercase) {
 		userChoice = lowercase;
+
 	} else if (useUppercase) {
 		userChoice = uppercase;
 	}
