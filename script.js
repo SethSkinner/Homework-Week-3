@@ -120,4 +120,8 @@ function generatePassword() {
     UserInput(ps);
     return ps;
 }
+
+function UserInput(ps) {
+    document.querySelector("#password").textContent = ps;
+
 }
