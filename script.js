@@ -1,12 +1,10 @@
 //user imput values
-//user imput values
 var numOfChar;
 var useNumber;
 var useSpecial;
 var useLowercase;
 var useUppercase;
 var userChoice;
-var empty;
 
 //arrays for character input in password
 var special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", " > ", " ? ", "@", "[", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
@@ -35,7 +33,7 @@ function generatePassword() {
 
 	//an if statement that makes sure there has been a value input
 	if (!numOfChar) {
-		alert('you must insert a value between 8-128')gi;
+		alert('you must insert a value between 8-128');
 
 		//else if statement that makes sure the value input was between 8-128
 	} else if (numOfChar < 8 || numOfChar > 128) {
