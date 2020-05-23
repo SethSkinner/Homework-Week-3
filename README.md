@@ -17,3 +17,8 @@ password generator:
 8) used a for loop to loop through the entire list of characters selected and push a randomly generated asortment of them
 
 9) created functions to return random password and add it to text area
+
+github pages link:
+
+https://sethskinner.github.io/Password-Generator/
+
