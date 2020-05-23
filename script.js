@@ -111,12 +111,14 @@ function generatePassword() {
 		password.push(userChoices);
 	}
 	
-	var ps = password.join("");
-	UserInput(ps);
-	return ps;
+	//creating variable to return the string value of the password generated randomly above
+	var randomPassword = password.join("");
+	UserInput(randomPassword);
+	return randomPassword;
 }
 
-function UserInput(ps) {
-	document.getElementById("password").textContent = ps;
+//function that takes the characters randomly chosen and inputs it into the text element on html page dispaying the password for user.
+function UserInput(randomPassword) {
+	document.querySelector("#password").textContent = randomPassword;
 
 }
