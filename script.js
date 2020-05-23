@@ -6,14 +6,15 @@ var useLowercase;
 var useUppercase;
 var userChoice;
 var empty;
-//arrays for character input
-special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", " > ", " ? ", "@", "[", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 
-lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+//arrays for character input in password
+var special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", " > ", " ? ", "@", "[", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 
-number = [1, 2, 3, 4, 5, 6, 7, 8, 9, ];
+var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var number = [1, 2, 3, 4, 5, 6, 7, 8, 9, ];
+
+var uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 // Assignment Code 
 var generateBtn = document.querySelector("#generate");
@@ -36,10 +37,10 @@ function generatePassword() {
 		alert('you must insert a value between 8-128');
 
 		//else if statement that makes sure the value input was between 8-128
-	} else if (numbOfChar <= 8 || numbOfChar >= 128) {
+	} else if (numOfChar < 8 || numOfChar > 128) {
 
 		//asking for user input and turning input into integer once more    
-		numbOfChar = parseInt(prompt('you must insert a value between 8-128'));
+		numOfChar = parseInt(prompt('you must insert a value between 8-128'));
 
 		//else statement that will use confirms to determine what characters the user chooses
 	} else {
@@ -60,13 +61,13 @@ function generatePassword() {
 	}
 
 	//else if statement that begins the parts of code that run if 3 types of characters are chosen
-	else if (userSpecial && useNumber && useUppercase) {
+	else if (useSpecial && useNumber && useUppercase) {
 		userChoice = special.concat(number, uppercase);
-	} else if (userSpecial && useNumber && useLowercase) {
+	} else if (useSpecial && useNumber && useLowercase) {
 		userChoice = special.concat(number, lowercase);
-	} else if (userSpecial && useLowercase && useUppercase) {
+	} else if (useSpecial && useLowercase && useUppercase) {
 		userChoice = special.concat(lowercase, uppercase);
-	} else if (userNumber && useLowercase && useUppercase) {
+	} else if (useNumber && useLowercase && useUppercase) {
 		userChoice = number.concat(lowercase, uppercase);
     }
 
@@ -80,7 +81,7 @@ function generatePassword() {
     } else if (useSpecial && useUppercase) {
         userChoice = special.concat(uppercase);
     }
-    else if (confirmLowercase && confirmNumber) {
+    else if (useLowercase && useNumber) {
         userChoice = lowercase.concat(number);
 
     } else if (useLowercase && useUppercase) {
@@ -103,19 +104,17 @@ function generatePassword() {
     // Created space variable to fill uppercase conversion
     else if (useUppercase) {
         userChoice = empty.concat(uppercase);
-    };
+    }
 
     // password variable is an array placeholder for user generated amount of length
     var password = [];
 
     // Start random selection variables:
     // Random selection for all variables: 
-    for (var i = 0; i < enter; i++) {
+    for (var i = 0; i < userChoice; i++) {
         var userChoices = userChoice[Math.floor(Math.random() * userChoice.length)];
         password.push(userChoices);
     }
-    // This joins the password array and converts it to a string
-    // Worked with a tutor to incorporate this option
     var ps = password.join("");
     UserInput(ps);
     return ps;
