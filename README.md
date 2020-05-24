@@ -1,3 +1,6 @@
+this is a code that will take the parameters set by a user for input and turn it into a random password. It will choose between 4 types
+of characters to choose from to make that password.
+
 password generator:
 
 1) created variables in global scope to be called upon for user input
